@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>创建服务端</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- bootstrap -->
+    <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../css/icons.css" />
+
+    <!-- libraries -->
+    <link rel="stylesheet" type="text/css" href="../css/lib/font-awesome.css" />
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../css/compiled/new-user.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<style>
+		.content2 {
+		    min-width: 400px;
+		    min-height: 620px;
+		    margin-bottom: 100px;
+		    padding-bottom: 50px;
+		    overflow: hidden;
+		    position: relative;
+		    background: #fff;		    
+		    border-left: 1px solid #dae3e9;
+		    border-bottom: 1px solid #dae3e9;
+		    box-shadow: -3px 3px 3px -2px #f1f1f3;
+		    border-radius: 0px 0px 0px 5px;
+		}
+</style>
+<body>
+	
+	<!-- main container -->
+    <div class="content2">    	
+        <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>创建服务端</h3>
+                </div>
+
+                <div class="row-fluid form-wrapper">
+                    <!-- left column -->
+                    <div class="span9 with-sidebar">
+                        <div class="container">
+                            <form class="new_user_form inline-input" />
+                                <div class="span12 field-box">
+                                    <label>服务名称:</label>
+                                    <input id="serverName" class="span9" type="text" />
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>服务标识:</label>
+                                    <input id="serverLabel" class="span9" type="text" placeholder="必需唯一，需提供给客户端做为请求参数" />
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>系统类型:</label>
+                                    <div class="ui-select span5">
+                                        <select id="systemType">
+                                            <option value="1" />内部系统
+                                            <option value="2" />第三方系统
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>服务类型:</label>
+                                    <div class="ui-select span5">
+                                        <select id="serverType">
+                                            <option value="http" />HTTP
+                                            <option value="socket" />SOCKET
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>传输类型:</label>
+                                    <div class="ui-select span5">
+                                        <select id="sendType">
+                                            <option value="get" />GET
+                                            <option value="post" />POST
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>服务状态:</label>
+                                    <div class="ui-select span5">
+                                        <select id="status">
+                                            <option value="1" />启用
+                                            <option value="0" />不启用
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>服务地址:</label>
+                                    <input id="serverUrl" class="span9" type="text" placeholder="http://<host>:<port>/address" />
+                                </div>
+                                <div class="span12 field-box textarea">
+                                    <label>服务说明:</label>
+                                    <textarea id="serverInfo" class="span9"></textarea>
+                                    <span class="charactersleft">服务说明描述内容，最多200个字符！</span>
+                                </div>
+                                
+                                <div class="span11 field-box actions">
+                                    <input type="button" class="btn-glow primary" value="创建服务" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- side right column -->
+                    <div class="span3 form-sidebar pull-right">                        
+                        <div class="alert alert-info hidden-tablet">
+                            <i class="icon-lightbulb pull-left"></i>
+                            请提供真实有效的服务接口，需是完整的地址，避免客户端无法访问！
+                        </div>                        
+                        <h6>服务地址需符合以下要求：</h6>
+                        <p>HTTP类型：http://IP地址:端口号/*</p>
+                        <p>SOCKET类型：IP地址:端口号</p>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框（Modal） -->
+	<div class="modal fade" id="createServerModal" tabindex="-1" role="dialog" aria-labelledby="createServerModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						操作提示
+					</h4>
+				</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div>		
+	<!-- /.modal -->
+    <input type="hidden" value="" id="id"  />
+    <!-- end main container -->
+	<!-- scripts -->
+    <script src="../js/jquery-latest.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/soa/createServer.js"></script>
+    </body>
+</html>

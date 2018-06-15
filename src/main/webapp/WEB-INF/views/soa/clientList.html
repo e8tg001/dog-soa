@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>客户端列表</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- bootstrap -->
+    <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../css/icons.css" />
+
+    <!-- libraries -->
+    <link href="../css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../css/compiled/user-list.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<style>
+		.content2 {
+		    min-width: 400px;
+		    min-height: 620px;
+		    margin-bottom: 100px;
+		    padding-bottom: 50px;
+		    overflow: hidden;
+		    position: relative;
+		    background: #fff;		    
+		    border-left: 1px solid #dae3e9;
+		    border-bottom: 1px solid #dae3e9;
+		    box-shadow: -3px 3px 3px -2px #f1f1f3;
+		    border-radius: 0px 0px 0px 5px;
+		}
+</style>
+<body>
+
+	<!-- main container -->
+    <div class="content2">		
+		
+        <div class="container-fluid">
+            <div id="pad-wrapper" class="users-list">
+                <div class="row-fluid header">
+                    <h3>客户端IP管理</h3>
+                    <div class="span10 pull-right">
+                        <input type="text" class="span5 search" placeholder="请输入查询的IP..." />
+                        <!-- custom popup filter -->
+                        <!-- styles are located in css/elements.css -->
+                        <!-- script that enables this dropdown is located in js/theme.js -->
+                        <div class="ui-dropdown">
+                            <div class="head" data-toggle="tooltip" title="用力戳我!">
+                                	添加客户端
+                                <i class="arrow-down"></i>
+                            </div>  
+                            <div class="dialog">
+                                <div class="pointer">
+                                    <div class="arrow"></div>
+                                    <div class="arrow_border"></div>
+                                </div>
+                                <div class="body">
+                                    <p class="title">
+                                        	添加客户端IP:
+                                    </p>
+                                    <div class="form">
+                                        <select id="systemType">
+                                            <option value="1" />内部系统
+                                            <option value="2" />第三方系统
+                                        </select>
+                                        <select id="status">                                            
+                                            <option value="0"/>禁用
+                                            <option value="1"/>启用
+                                        </select>
+                                        <input id="ip" type="text" style="width: 120px;" placeholder="请输入IP..." />
+                                        <a class="btn-flat small">添加</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Users table -->
+                <div class="row-fluid table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="span4 sortable">
+                                    	客户端IP
+                                </th>
+                                <th class="span3 sortable">
+                                    <span class="line"></span>创建时间
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>状态
+                                </th>
+                                <th class="span3 sortable align-right">
+                                    <span class="line"></span>操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>                        
+                                            
+                        </tbody>
+                    </table>
+                </div>                
+                <!-- end users table -->
+            </div>
+        </div>
+    </div>
+    <!-- end main container -->
+	
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel">删除提示</h4>
+	            </div>
+	            <div class="modal-body">请确认是否删除该客户端？</div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary">提交更改</button>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	
+	<input type="hidden" value="" id="id"  />
+	<!-- scripts -->
+    <script src="../js/jquery-latest.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/soa/clientList.js"></script>
+
+</body>
+</html>

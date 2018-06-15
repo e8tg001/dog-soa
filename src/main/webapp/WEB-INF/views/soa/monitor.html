@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>监控管理 - 控制台 - Home</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- bootstrap -->
+    <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="../css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="../css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../css/icons.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../css/compiled/index.css" type="text/css" media="screen" />    
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<style>
+		.content2 {
+		    min-width: 400px;
+		    min-height: 620px;
+		    margin-bottom: 100px;
+		    padding-bottom: 50px;
+		    overflow: hidden;
+		    position: relative;
+		    background: #fff;		    
+		    border-left: 1px solid #dae3e9;
+		    border-bottom: 1px solid #dae3e9;
+		    box-shadow: -3px 3px 3px -2px #f1f1f3;
+		    border-radius: 0px 0px 0px 5px;
+		}
+</style>
+<body>
+	<!-- main container -->
+    <div class="content2">
+
+        <div class="container-fluid">
+
+            <!-- upper main stats -->
+            <div id="main-stats">
+                <div class="row-fluid stats-row">
+                    <div class="span3 stat">
+                        <div class="data">
+                            <span class="number">2457</span>
+                             失败次数
+                        </div>
+                        <span class="date">Today</span>
+                    </div>
+                    <div class="span3 stat">
+                        <div class="data">
+                            <span class="number">324</span>
+                            成功次数
+                        </div>
+                        <span class="date">February 2014</span>
+                    </div>
+                    <div class="span3 stat">
+                        <div class="data">
+                            <span class="number">322</span>
+                            平均分钟次数
+                        </div>
+                        <span class="date">This week</span>
+                    </div>
+                    <div class="span3 stat last">
+                        <div class="data">
+                            <span class="number">2,340</span>
+                            访问总次数
+                        </div>
+                        <span class="date">last 30 days</span>
+                    </div>
+                </div>
+            </div>
+            <!-- end upper main stats -->
+
+            <div id="pad-wrapper" style=" margin-top: 15px;">
+
+                <!-- statistics chart built with jQuery Flot -->
+                <div class="row-fluid chart">                    
+                    <div class="span12" style="border: 0px solid #ccc;">
+                        <div id="container" style="height: 350px; width: 100%; border: 0px solid #ccc; margin-top: 10px;"></div>
+                    </div>                    
+		        	<div class="span12" style="border: 0px solid #ccc; margin-left: 0px;">
+                        <div id="container2" style="height: 350px; width: 100%; border: 0px solid #ccc; margin-top: 10px;"></div>
+                    </div> 		        	
+                </div>
+                <!-- end statistics chart -->               
+
+                <!-- table sample -->
+                <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+                <div class="table-products section"  style=" margin-top: 15px;">
+                    <div class="row-fluid head">
+                        <div class="span12">
+                            <h4>日志列表 <small>明细清单</small></h4>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid filter-block">
+                        <div class="pull-right">
+                            <div class="ui-select">
+                                <select>
+                                  <option />ALL
+                                  <option />ERROR
+                                  <option />WARN
+                                  <option />INFO
+                                </select>
+                            </div>
+                            <input type="text" class="search" />
+                            <a class="btn-flat new-product">搜索</a>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span3">
+                                        <input type="checkbox" />
+										时间
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>描述
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>类型
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- row -->
+                                <tr class="first">
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:15:00.021</a>
+                                    </td>
+                                    <td class="description">
+                                        [SchedulerFactoryBean_Worker-1] ERROR c.h.v.n.service.NoticeCacheToDbJob - ##### Notice 定时执行任务 ##### list = 0
+                                    </td>
+                                    <td>
+                                        <span class="label label-success">ERROR</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                       
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                 <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                       
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                       
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" />                                        
+                                        <a href="#">2016-04-06 15:18:47</a>
+                                    </td>
+                                    <td class="description">
+                                        DEBUG [com.test.log.LogTest] - this test log message , message:1
+                                    </td>
+                                    <td>
+                                    	<span class="label label-info">INFO</span>
+                                        <ul class="actions">
+                                            <li><i class="table-edit"></i></li>
+                                            <li><i class="table-settings"></i></li>
+                                            <li class="last"><i class="table-delete"></i></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- row -->                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                      <ul>
+                        <li><a href="#">&#8249;</a></li>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#">&#8250;</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <!-- end table sample -->
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+    <script src="../js/jquery-latest.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="../js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="../js/jquery.flot.js"></script>
+    <script src="../js/jquery.flot.stack.js"></script>
+    <script src="../js/jquery.flot.resize.js"></script>
+    <script src="../js/theme.js"></script>
+	<script src="../js/echarts.common.min.js"></script>
+	
+    <script type="text/javascript">
+    
+    	
+		
+		
+		function createLineChart(){
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = null;
+			function randomData() {
+			    now = new Date(+now + oneMinutes);
+			    value = value + Math.random() * 21 - 10;
+			    return {
+			        name: now.toString(),
+			        value: [now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+' '+now.getHours()+':'+now.getMinutes()+ ':' + now.getSeconds()
+			            ,
+			            Math.round(value)
+			        ]
+			    }
+			}
+			
+			var data = [];
+			//var now = +new Date(1997, 9, 3);
+			var now = new Date();
+			var oneDay = 24 * 3600 * 1000;	
+			var oneHours = 1000*3600;
+			var oneMinutes = 1000;
+			var value = Math.random() * 1000;
+			for (var i = 0; i < 1000; i++) {
+			    data.push(randomData());
+			}
+			
+			option = {
+			    title: {
+			        text: '实时服务调用监控',
+			        subtext: '纯属虚构'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        formatter: function (params) {
+			            params = params[0];
+			            var date = new Date(params.name);
+			            //return date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()+" "+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds()+ ' : ' + params.value[1];
+			            return date.getHours()+':'+date.getMinutes()+':'+date.getSeconds()+ ' : ' + params.value[1];
+			        },
+			        axisPointer: {
+			            animation: true
+			        }
+			    },
+			    xAxis: {
+			        type: 'time',
+			        splitLine: {
+			            show: false
+			        }
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, '100%'],
+			        splitLine: {
+			            show: true
+			        }
+			    },
+			    series: [{
+			        name: '模拟数据',
+			        type: 'line',
+			        showSymbol: false,
+			        hoverAnimation: false,
+			        data: data
+			    }]
+			};
+			
+			app.timeTicket = setInterval(function () {		
+			    for (var i = 0; i < 1; i++) {
+			        data.shift();
+			        data.push(randomData());
+			    }
+			
+			    myChart.setOption({
+			        series: [{
+			            data: data
+			        }]
+			    });
+			}, 1000);;
+			if (option && typeof option === "object") {
+			    var startTime = +new Date();
+			    myChart.setOption(option, true);
+			    var endTime = +new Date();
+			    var updateTime = endTime - startTime;
+			    console.log("Time used:", updateTime);
+			}
+		}
+		createLineChart();
+		
+		function createBarChart(){
+			var dom = document.getElementById("container2");
+			var myChart = echarts.init(dom);
+			var app = {};
+			var option = null;
+			option = {
+			    title : {
+			        text: '每小时服务调用监控',
+			        subtext: '纯属虚构'
+			    },
+			    tooltip : {
+			        trigger: 'axis'
+			    },
+			    legend: {
+			        data:['成功','失败']
+			    },
+			    toolbox: {
+			        show : true,//这里设置是否启用右上角的工具栏
+			        feature : {
+			            dataView : {show: true, readOnly: false},
+			            magicType : {show: true, type: ['line', 'bar']},
+			            restore : {show: true},
+			            saveAsImage : {show: true}
+			        }
+			    },
+			    calculable : true,
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['01:00','02:00','03:00','04:00','05:00','06:00']
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value'
+			        }
+			    ],
+			    series : [
+			        {
+			            name:'成功',
+			            type:'bar',
+			            data:[1,10,30,70,15,30],
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'top'
+			                }
+			            },
+			            markPoint : {
+			                data : [
+			                    //{type : 'max', name: '最大值'},
+			                    //{type : 'min', name: '最小值'}
+			                ]
+			            },
+			            markLine : {
+			                data : [
+			                    {type : 'average', name: '平均值'}
+			                ]
+			            }
+			        },
+			        {
+			            name:'失败',
+			            type:'bar',
+			            data:[10,15,45,75,55,65],
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'top'
+			                }
+			            },
+			            markPoint : {
+			                data : [
+			                    //{name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+			                    //{name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+			                ]
+			            },
+			            markLine : {
+			                data : [
+			                    {type : 'average', name : '平均值'}
+			                ]
+			            }
+			        }
+			    ]
+			};
+			;
+			if (option && typeof option === "object") {
+			    var startTime = +new Date();
+			    myChart.setOption(option, true);
+			    var endTime = +new Date();
+			    var updateTime = endTime - startTime;
+			    console.log("Time used:", updateTime);
+			}			
+		}
+		createBarChart();
+    
+        $(function () {
+
+            // jQuery Knobs
+            $(".knob").knob();
+            // jQuery UI Sliders
+            $(".slider-sample1").slider({
+                value: 100,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample2").slider({
+                range: "min",
+                value: 130,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample3").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 40, 170 ],
+            });
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y - 30,
+                    left: x - 50,
+                    color: "#fff",
+                    padding: '2px 5px',
+                    'border-radius': '6px',
+                    'background-color': '#000',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+            }            
+        });
+    </script>
+<!-- 
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+ -->
+</body>
+</html>
